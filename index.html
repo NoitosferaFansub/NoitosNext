@@ -1,0 +1,834 @@
+<html><head>
+		<title>Noitosfera</title>
+		<meta name="description" content="Noitosfera Fansub">
+        <meta property="og:title" content="Noitosfera Fansub">
+        <meta property="og:description" content="Episódios legendados de fãs para fãs. Adventure Time, Regular Show, Bravest Warriors, Clarence e muito mais.">
+		<meta property="og:image" content="http://nirewen.gitlab.io/Noitosfera/img/capa.jpg">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/materialize.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script src="js/snowstorm.js"></script>
+		</head><body><audio id="join-song" src="src/intro.mp3"></audio>
+	
+	
+		<div>
+			<div class="navbar-fixed">
+				<nav>
+					<div id="menu" class="nav-wrapper" style="background: rgb(39, 39, 39);">
+						<div class="hamburger icone" onclick="openMenu()">☰</div>
+						<div class="logo" style="background: rgb(39, 39, 39);">
+							<img class="icone arrow" style="height: 0px;" src="img/arrow.png"><img class="icone nf" src="img/NF.png">
+						</div>
+						<ul class="item-wrapper right">
+							<li class="item cn" onclick="jumpTo('cartoon-network'); animateThis('cn', '#101010');" style="background: rgb(16, 16, 16); display: block; box-shadow: none;"><img class="icone cn" src="img/CN.png"></li>
+							<li class="item ch" onclick="jumpTo('cartoon-hangover'); animateThis('ch', '#232323');" style="background: rgb(35, 35, 35);"><img class="icone ch" src="img/CH.png"></li>
+							<li class="item as" onclick="jumpTo('adult-swim'); animateThis('as', '#5f5f5f');" style="background: rgb(95, 95, 95);"><img class="icone as" src="img/AS.png"></li>
+							<li class="item ot" onclick="jumpTo('outros'); animateThis('ot', '#838383');" style="background: rgb(131, 131, 131);"><img class="icone outros" src="img/Outros.png"></li>
+							<li class="item ex" onclick="jumpTo('extras'); animateThis('ex', '#9d9d9d');" style="background: rgb(157, 157, 157); display: block; box-shadow: none;"><img class="icone extras" src="img/Extras.png"></li>
+
+						</ul>
+					</div>
+				<button class="adm" onclick="" style="background: rgb(238, 238, 238);display: block;box-shadow: none;text-align: center;padding: 10px 10px;position: relative;left: 88%;bottom: 68%;transition: 200ms ease;"></button></nav>
+			</div>
+			<div id="mainpage">
+				<div class="main-wrapper" style="display: block;">
+					<a href="#rs"><img class="principal banner rs" src="img/RSS08E16.png"></a>
+					<div class="lateral">
+						<a href="#at"><img class="banner at wide" src="img/AdventureTime-Banner.png"></a>
+						<a href="#sj"><img class="banner rs pequeno" src="img/SJ-Banner.png"></a>
+						<a href="#ttgo"><img class="banner rnm pequeno" src="img/TTGO-Banner.png"></a>
+						<a href="#bw"><img class="banner bap pequeno" src="img/Bravest-Warriors-Banner.png"></a>
+						<a href="#dhmis"><img class="banner td pequeno" src="img/DHMIS-Banner.png"></a>
+						<a href="#athf"><img class="banner athf wide" src="img/ATHF-Banner.png"></a>
+					</div>
+					<div id="parceiros">
+						<div class="parceiros">
+							<a href="http://aterradeoooz.freeiz.com/forum/"><img class="banner parceiro" style="float:left;" src="img/parceiro1.png"></a>
+							<a href="https://www.facebook.com/adventuretimestheory"><img class="banner parceiro" style="float:right;" src="img/parceiro2.png"></a>
+							<div class="center"><img class="parceiro-label" src="img/parceiros-label.png"></div>
+						</div>
+					</div>
+				</div>
+				<div id="cartoon-network" style="display: none;">
+					<div class="series-handler series-scrollable center">
+						<div class="serie" onclick="showSeason(event, 'at');" style="background-image: url(img/series-AT.png); background-size: cover;"></div>
+						<div class="serie" onclick="showSeason(event, 'rs');" style="background-image: url(img/series-RS.png); background-size: cover;"></div>
+						<div class="serie" onclick="showSeason(event, 'wbb');" style="background-image: url(img/series-WBB.png); background-size: cover;"></div>
+						<div class="serie" onclick="showSeason(event, 'ppg');" style="background-image: url(img/series-PPG.png); background-size: cover;"></div>
+						<div class="serie" onclick="showSeason(event, 'bc');" style="background-image: url(img/series-BC.png); background-size: cover;"></div>
+						<div class="serie" onclick="showSeason(event, 'lltr');" style="background-image: url(img/series-LLTR.png); background-size: cover;"></div>
+						<div class="serie" onclick="showSeason(event, 'clrnce');" style="background-image: url(img/series-CLRNCE.png); background-size: cover;"></div>
+						<div class="serie" onclick="showSeason(event, 'sb');" style="background-image: url(img/series-SB.png); background-size: cover;"></div>
+						<div class="serie" onclick="showSeason(event, 'wbbt');" style="background-image: url(img/series-WBBT.png); background-size: cover;"></div>
+						<div class="serie" onclick="showSeason(event, 'tawog');" style="background-image: url(img/series-TAWOG.png); background-size: cover;"></div>
+						<div class="serie" onclick="showSeason(event, 'bcsd');" style="background-image: url(img/series-BCSD.png); background-size: cover;"></div>
+					</div>
+					<ul class="aba at center" style="">
+						<div><span class="white-text">Escolha uma temporada</span></div>
+						<div class="season-scrollable">
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'at-primeira')"><img style="height: 100%;" src="img/seasons/1.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'at-segunda')"><img style="height: 100%;" src="img/seasons/2.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'at-terceira')"><img style="height: 100%;" src="img/seasons/3.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'at-quarta')"><img style="height: 100%;" src="img/seasons/4.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'at-quinta')"><img style="height: 100%;" src="img/seasons/5.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'at-sexta')"><img style="height: 100%;" src="img/seasons/6.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'at-setima')"><img style="height: 100%;" src="img/seasons/7.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'at-curtas')"><img style="height: 100%;" src="img/seasons/curtas.png"></a></li>
+						</div>
+					</ul>
+					<div id="at-primeira" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="at-segunda" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="at-terceira" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="at-quarta" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="at-quinta" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="at-sexta" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="at-setima" class="aba-conteudo center" style="">
+						<div class="episodio seis"><a onclick="abrirModal('at','sete','um')"><img class="banner at" src="seasons/cn/at/7/cards/1.png"></a>
+							<div id="modal-episodio" class="modal-thing at sete um">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/cn/at/7/backgrounds/1.png') no-repeat center center;background-size: cover">
+										<h6>Adventure Time</h6>
+										<strong><h2>Bonnie and Neddy</h2></strong>
+										<h5>S07E01</h5>
+										<p>Um dos maiores segredos do Reino Doce é revelado graças ás ordens do Rei de Ooo sobre Finn e Jake.</p>
+										<a href="cartoon-network/adventure-time/7/1"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('at','sete','dois')"><img class="banner at" src="seasons/cn/at/7/cards/2.png"></a>
+							<div id="modal-episodio" class="modal-thing at sete dois">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/cn/at/7/backgrounds/2.png') no-repeat center center;background-size: cover">
+										<h6>Adventure Time</h6>
+										<strong><h2>Varmints</h2></strong>
+										<h5>S07E02</h5>
+										<p>Bonnibel e Marceline passam um tempo juntas após Rei de Ooo tomar o controle do Reino Doce.</p>
+										<a href="cartoon-network/adventure-time/7/2"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('at','sete','tres')"><img class="banner at" src="seasons/cn/at/7/cards/3.png"></a>
+							<div id="modal-episodio" class="modal-thing at sete tres">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/cn/at/7/backgrounds/3.png') no-repeat center center;background-size: cover">
+										<h6>Adventure Time</h6>
+										<strong><h2>Cherry Cream Soda</h2></strong>
+										<h5>S07E03</h5>
+										<p>A vida de Cerejinha muda completamente após a chegada de um visitante.</p>
+										<a href="cartoon-network/adventure-time/7/3"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('at','sete','quatro')"><img class="banner at" src="seasons/cn/at/7/cards/4.png"></a>
+							<div id="modal-episodio" class="modal-thing at sete quatro">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/cn/at/7/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Adventure Time</h6>
+										<strong><h2>Mama Said</h2></strong>
+										<h5>S07E04</h5>
+										<p>Rei de Ooo faz Finn e Jake embarcarem em uma missão á procura de cogumelos voadores.</p>
+										<a href="cartoon-network/adventure-time/7/4"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('at','sete','cinco')"><img class="banner at" src="seasons/cn/at/7/cards/5.png"></a>
+							<div id="modal-episodio" class="modal-thing at sete cinco">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/cn/at/7/backgrounds/5.png') no-repeat center center;background-size: cover">
+										<h6>Adventure Time</h6>
+										<strong><h2>Football</h2></strong>
+										<h5>S07E05</h5>
+										<p>BMO troca de lugar com Futebol por um dia.</p>
+										<a href="cartoon-network/adventure-time/7/5"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('at','sete','seis')"><img class="banner at" src="seasons/cn/at/7/cards/6.png"></a>
+							<div id="modal-episodio" class="modal-thing at sete seis">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/cn/at/7/backgrounds/6.png') no-repeat center center;background-size: cover">
+										<h6>Adventure Time</h6>
+										<strong><h2>Marceline, the Vampire Queen</h2></strong>
+										<h5>S07E06</h5>
+										<p>Finn e Jake caçam um predador sombrio e Marceline pede um favor a Princesa Jujuba.</p>
+										<a href="cartoon-network/adventure-time/7/6"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>					
+					<div id="at-curtas" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<ul class="aba rs center" style="">
+						<div><span class="white-text">Escolha uma temporada</span></div>
+						<div class="season-scrollable">
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'rs-primeira')"><img style="height: 100%;" src="img/seasons/1.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'rs-segunda')"><img style="height: 100%;" src="img/seasons/2.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'rs-terceira')"><img style="height: 100%;" src="img/seasons/3.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'rs-quarta')"><img style="height: 100%;" src="img/seasons/4.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'rs-quinta')"><img style="height: 100%;" src="img/seasons/5.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'rs-sexta')"><img style="height: 100%;" src="img/seasons/6.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'rs-setima')"><img style="height: 100%;" src="img/seasons/7.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'rs-oitava')"><img style="height: 100%;" src="img/seasons/8.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'rs-curtas')"><img style="height: 100%;" src="img/seasons/curtas.png"></a></li>
+						</div>
+					</ul>
+					<div id="rs-primeira" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="rs-segunda" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="rs-terceira" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="rs-quarta" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="rs-quinta" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="rs-sexta" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="rs-setima" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="rs-oitava" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="rs-curtas" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<ul class="aba wbb center" style="">
+						<div><span class="white-text">Escolha uma temporada</span></div>
+						<div class="season-scrollable">
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'wbb-primeira')"><img style="height: 100%;" src="img/seasons/1.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'wbb-segunda')"><img style="height: 100%;" src="img/seasons/2.png"></a></li>
+						</div>
+					</ul>
+					<div id="wbb-primeira" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="wbb-segunda" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<ul class="aba ppg center" style="">
+						<div><span class="white-text">Escolha uma temporada</span></div>
+						<div class="season-scrollable">
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'ppg-primeira')"><img style="height: 100%;" src="img/seasons/1.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'ppg-segunda')"><img style="height: 100%;" src="img/seasons/2.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'ppg-terceira')"><img style="height: 100%;" src="img/seasons/3.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'ppg-quarta')"><img style="height: 100%;" src="img/seasons/4.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'ppg-quinta')"><img style="height: 100%;" src="img/seasons/5.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'ppg-sexta')"><img style="height: 100%;" src="img/seasons/6.png"></a></li>
+						</div>
+					</ul>
+					<div id="ppg-primeira" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="ppg-segunda" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="ppg-terceira" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="ppg-quarta" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="ppg-quinta" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="ppg-sexta" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<ul class="aba bc center" style="">
+						<div><span class="white-text">Escolha uma temporada</span></div>
+						<div class="season-scrollable">
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'bc-primeira')"><img style="height: 100%;" src="img/seasons/1.png"></a></li>
+						</div>
+					</ul>
+					<div id="bc-primeira" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<ul class="aba lltr center" style="">
+						<div><span class="white-text">Escolha uma temporada</span></div>
+						<div class="season-scrollable">
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'lltr-primeira')"><img style="height: 100%;" src="img/seasons/1.png"></a></li>
+						</div>
+					</ul>
+					<div id="lltr-primeira" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<ul class="aba clrnce center" style="">
+						<div><span class="white-text">Escolha uma temporada</span></div>
+						<div class="season-scrollable">
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'clrnce-primeira')"><img style="height: 100%;" src="img/seasons/1.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'clrnce-segunda')"><img style="height: 100%;" src="img/seasons/2.png"></a></li>
+						</div>
+					</ul>
+					<div id="clrnce-primeira" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="clrnce-segunda" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<ul class="aba sb center" style="">
+						<div><span class="white-text">Escolha uma temporada</span></div>
+						<div class="season-scrollable">
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'sb-primeira')"><img style="height: 100%;" src="img/seasons/1.png"></a></li>
+						</div>
+					</ul>
+					<div id="sb-primeira" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<ul class="aba wbbt center" style="">
+						<div><span class="white-text">Escolha uma temporada</span></div>
+						<div class="season-scrollable">
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'wbbt-primeira')"><img style="height: 100%;" src="img/seasons/1.png"></a></li>
+						</div>
+					</ul>
+					<div id="wbbt-primeira" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<ul class="aba tawog center" style="">
+						<div><span class="white-text">Escolha uma temporada</span></div>
+						<div class="season-scrollable">
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'tawog-primeira')"><img style="height: 100%;" src="img/seasons/1.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'tawog-segunda')"><img style="height: 100%;" src="img/seasons/2.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'tawog-terceira')"><img style="height: 100%;" src="img/seasons/3.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'tawog-quarta')"><img style="height: 100%;" src="img/seasons/4.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'tawog-quinta')"><img style="height: 100%;" src="img/seasons/5.png"></a></li>
+						</div>
+					</ul>
+					<div id="tawog-primeira" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="tawog-segunda" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="tawog-terceira" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="tawog-quarta" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<div id="tawog-quinta" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+					<ul class="aba bcsd center" style="">
+						<div><span class="white-text">Escolha uma temporada</span></div>
+						<div class="season-scrollable">
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'bcsd-primeira')"><img style="height: 100%;" src="img/seasons/1.png"></a></li>
+						</div>
+					</ul>
+					<div id="bcsd-primeira" class="aba-conteudo center" style=""><img class="not-found" src="seasons/not-found/notfound.png"></div>
+				</div>
+				<div id="cartoon-hangover" style="">
+					<div class="series-handler series-scrollable center">
+						<div class="serie" onclick="showSeason(event, 'bpc');" style="background-image: url(img/series-BPC.png); background-size: cover;"></div>
+						<div class="serie" onclick="showSeason(event, 'bw');" style="background-image: url(img/series-BW.png); background-size: cover;"></div>
+					</div>
+					<ul class="aba bpc center" style="">
+						<div><span class="white-text">Escolha uma temporada</span></div>
+						<div class="season-scrollable">
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'bpc-primeira')"><img style="height: 100%;" src="img/seasons/1.png"></a></li>
+						</div>
+					</ul>
+					<ul class="aba bw center" style="">
+						<div><span class="white-text">Escolha uma temporada</span></div>
+						<div class="season-scrollable">
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'bw-primeira')"><img style="height: 100%;" src="img/seasons/1.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'bw-segunda')"><img style="height: 100%;" src="img/seasons/2.png"></a></li>
+							<li><a href="javascript:void(0)" class="tablinks" onclick="showEpisodes(event, 'bw-curtas')"><img style="height: 100%;" src="img/seasons/curtas.png"></a></li>
+						</div>
+					</ul>
+					<div id="bpc-primeira" class="aba-conteudo center" style="">
+						<div class="episodio quatro"><a onclick="abrirModal('bpc','primeira','um')"><img class="banner bpc" src="seasons/ch/bpc/1/cards/1.png"></a>
+							<div id="modal-episodio" class="modal-thing bpc primeira um">
+								<div class="modal-conteudo black-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bpc/1/backgrounds/1.png') no-repeat center center;background-size: cover">
+										<h6>Bee and Puppycat</h6>
+										<strong><h2>Food</h2></strong>
+										<h5>S01E01</h5>
+										<p>Bee encontra uma receita que ela quer fazer com Deckard. Quando está comprando os ingredientes para a receita, ela acaba esquecendo um e esgota todo seu dinheiro.</p>
+										<a href="cartoon-hangover/bee-and-puppycat/1/1"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio quatro"><a onclick="abrirModal('bpc','primeira','dois')"><img class="banner bpc" src="seasons/ch/bpc/1/cards/2.png"></a>
+							<div id="modal-episodio" class="modal-thing bpc primeira dois">
+								<div class="modal-conteudo black-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bpc/1/backgrounds/2.png') no-repeat center center;background-size: cover">
+										<h6>Bee and Puppycat</h6>
+										<strong><h2>Farmer</h2></strong>
+										<h5>S01E02</h5>
+										<p>Continuando de onde "Food" parou, nesse episódio, Bee e PuppyCat conseguem um emprego temporário no planeta Jelly Cube para conseguir um pouco de dinheiro. Eles também descobrem o porquê de ninguém ter escolhido o emprego que deram pra eles.</p>
+										<a href="cartoon-hangover/bee-and-puppycat/1/2"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio quatro"><a onclick="abrirModal('bpc','primeira','tres')"><img class="banner bpc" src="seasons/ch/bpc/1/cards/3.png"></a>
+							<div id="modal-episodio" class="modal-thing bpc primeira tres">
+								<div class="modal-conteudo black-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bpc/1/backgrounds/3.png') no-repeat center center;background-size: cover">
+										<h6>Bee and Puppycat</h6>
+										<strong><h2>Beach</h2></strong>
+										<h5>S01E03</h5>
+										<p>Quando Cardamon, o síndico irritadinho, os expulsa de casa por um tempo, Bee e PuppyCat vão para a praia e procuram um lugar para assistir Pretty Patrick Lunchtime Marathon. Eles nunca mais vão olhar para aquele carangueijo da mesma maneira...</p>
+										<a href="cartoon-hangover/bee-and-puppycat/1/3"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio quatro"><a onclick="abrirModal('bpc','primeira','quatro')"><img class="banner bpc" src="seasons/ch/bpc/1/cards/4.png"></a>
+							<div id="modal-episodio" class="modal-thing bpc primeira quatro">
+								<div class="modal-conteudo black-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bpc/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bee and Puppycat</h6>
+										<strong><h2>Cats</h2></strong>
+										<h5>S01E04</h5>
+										<p>No nosso final de meia-temporada, Bee e PuppyCat viajam para uma sauna no Planeta Cabeça-de-Gato para seu mais estranho e adorável emprego até agora. Para a sorte deles, Pretty Patrick está na TV também!</p>
+										<a href="cartoon-hangover/bee-and-puppycat/1/4"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="bw-primeira" class="aba-conteudo center" style="">
+						<div class="episodio seis"><a onclick="abrirModal('bw','primeira','um')"><img class="banner bw" src="seasons/ch/bw/1/cards/1.png"></a>
+							<div id="modal-episodio" class="modal-thing bw primeira um">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/1.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Time Slime</h2></strong>
+										<h5>S01E01</h5>
+										<p>A galera tenta impedir que algo terrível aconteça.</p>
+										<a href="cartoon-hangover/bravest-warriors/1/1"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','primeira','dois')"><img class="banner bw" src="seasons/ch/bw/1/cards/2.png"></a>
+							<div id="modal-episodio" class="modal-thing bw primeira dois">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/2.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Emotion Lord</h2></strong>
+										<h5>S01E02</h5>
+										<p>Um mago enche o saco do pessoal.</p>
+										<a href="cartoon-hangover/bravest-warriors/1/2"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','primeira','tres')"><img class="banner bw" src="seasons/ch/bw/1/cards/3.png"></a>
+							<div id="modal-episodio" class="modal-thing bw primeira tres">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/3.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Butter Letuce</h2></strong>
+										<h5>S01E03</h5>
+										<p>O pessoal brinca no banheiro.</p>
+										<a href="cartoon-hangover/bravest-warriors/1/3"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','primeira','quatro')"><img class="banner bw" src="seasons/ch/bw/1/cards/4.png"></a>
+							<div id="modal-episodio" class="modal-thing bw primeira quatro">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Memory Donk</h2></strong>
+										<h5>S01E04</h5>
+										<p>A patota perde a memória.</p>
+										<a href="cartoon-hangover/bravest-warriors/1/4"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','primeira','cinco')"><img class="banner bw" src="seasons/ch/bw/1/cards/5.png"></a>
+							<div id="modal-episodio" class="modal-thing bw primeira cinco">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>The Bunless</h2></strong>
+										<h5>S01E05</h5>
+										<p>Chris e Beth devem fazer duas entidades se amarem novamente.</p>
+										<a href="cartoon-hangover/bravest-warriors/1/5"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','primeira','seis')"><img class="banner bw" src="seasons/ch/bw/1/cards/6.png"></a>
+							<div id="modal-episodio" class="modal-thing bw primeira seis">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Lavarinth</h2></strong>
+										<h5>S01E06</h5>
+										<p>O Mago Emocional aparece durante uma missão em um vulcão.</p>
+										<a href="cartoon-hangover/bravest-warriors/1/6"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','primeira','sete')"><img class="banner bw" src="seasons/ch/bw/1/cards/7.png"></a>
+							<div id="modal-episodio" class="modal-thing bw primeira sete">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Gas Powered Stick</h2></strong>
+										<h5>S01E07</h5>
+										<p>A amiga de Beth, Plum, alvoroça os ânimos masculinos.</p>
+										<a href="cartoon-hangover/bravest-warriors/1/7"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','primeira','oito')"><img class="banner bw" src="seasons/ch/bw/1/cards/8.png"></a>
+							<div id="modal-episodio" class="modal-thing bw primeira oito">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Dan Before Time</h2></strong>
+										<h5>S01E08</h5>
+										<p>Dan cria uma máquina do tempo.</p>
+										<a href="cartoon-hangover/bravest-warriors/1/8"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','primeira','nove')"><img class="banner bw" src="seasons/ch/bw/1/cards/9.png"></a>
+							<div id="modal-episodio" class="modal-thing bw primeira nove">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Cereal Master</h2></strong>
+										<h5>S01E09</h5>
+										<p>Chris tenta fazer algo especial pra Beth.</p>
+										<a href="cartoon-hangover/bravest-warriors/1/9"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','primeira','dez')"><img class="banner bw" src="seasons/ch/bw/1/cards/10.png"></a>
+							<div id="modal-episodio" class="modal-thing bw primeira dez">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Ultra Wankershim</h2></strong>
+										<h5>S01E10</h5>
+										<p>Wankershim cresce.</p>
+										<a href="cartoon-hangover/bravest-warriors/1/10"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','primeira','onze')"><img class="banner bw" src="seasons/ch/bw/1/cards/11.png"></a>
+							<div id="modal-episodio" class="modal-thing bw primeira onze">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Catbug</h2></strong>
+										<h5>S01E11</h5>
+										<p>Catbug traz Presentes!</p>
+										<a href="cartoon-hangover/bravest-warriors/1/11"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','primeira','lost')"><img class="banner bw" src="seasons/ch/bw/1/cards/lost.png"></a>
+							<div id="modal-episodio" class="modal-thing bw primeira lost">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Sugarbellies</h2></strong>
+										<h5>S01ELOST</h5>
+										<p>Os Bravest Warriors precisam restaurar a conjução de três petalans.</p>
+										<a href="cartoon-hangover/bravest-warriors/1/lost"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="bw-segunda" class="aba-conteudo center" style="">
+						<div class="episodio seis"><a onclick="abrirModal('bw','segunda','um')"><img class="banner bw" src="seasons/ch/bw/2/cards/1.png"></a>
+							<div id="modal-episodio" class="modal-thing bw segunda um">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/1.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Aeon Worm</h2></strong>
+										<h5>S01E01</h5>
+										<p>Beth vai para a Zona Transparente.</p>
+										<a href="cartoon-hangover/bravest-warriors/2/1"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','segunda','dois')"><img class="banner bw" src="seasons/ch/bw/2/cards/2.png"></a>
+							<div id="modal-episodio" class="modal-thing bw segunda dois">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/2.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>RoboChris</h2></strong>
+										<h5>S02E02</h5>
+										<p>Danny cria um robô de Chris para tentar fazê-lo ficar com ciúmes.</p>
+										<a href="cartoon-hangover/bravest-warriors/2/2"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','segunda','tres')"><img class="banner bw" src="seasons/ch/bw/2/cards/3.png"></a>
+							<div id="modal-episodio" class="modal-thing bw segunda tres">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/3.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Mexican Touchdown</h2></strong>
+										<h5>S02E03</h5>
+										<p>Danny e Plum precisam salvar um planeta de uma espécie alienígena pervertida.</p>
+										<a href="cartoon-hangover/bravest-warriors/2/3"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','segunda','quatro')"><img class="banner bw" src="seasons/ch/bw/2/cards/4.png"></a>
+							<div id="modal-episodio" class="modal-thing bw segunda quatro">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Hamster Priest</h2></strong>
+										<h5>S02E04</h5>
+										<p>Algo está muito errado com a Beth.</p>
+										<a href="cartoon-hangover/bravest-warriors/2/4"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','segunda','cinco')"><img class="banner bw" src="seasons/ch/bw/2/cards/5.png"></a>
+							<div id="modal-episodio" class="modal-thing bw segunda cinco">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Jelly Kid Forever</h2></strong>
+										<h5>S02E05</h5>
+										<p>Catbug mata Jelly Kid e deixa o Danny deprimido.</p>
+										<a href="cartoon-hangover/bravest-warriors/2/5"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','segunda','seis')"><img class="banner bw" src="seasons/ch/bw/2/cards/6.png"></a>
+							<div id="modal-episodio" class="modal-thing bw segunda seis">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>The Puppetyville Horror</h2></strong>
+										<h5>S02E06</h5>
+										<p>Danny, Beth e Wallow desaparecem em uma espécie de planeta “sem vida” e cabe a Chris ir resgatá-los.</p>
+										<a href="cartoon-hangover/bravest-warriors/2/6"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','segunda','sete')"><img class="banner bw" src="seasons/ch/bw/2/cards/7.png"></a>
+							<div id="modal-episodio" class="modal-thing bw segunda sete">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Catbug's Away Team</h2></strong>
+										<h5>S02E07</h5>
+										<p>Os Bravest Warriors investigam uma estranha concentação de Wankenergia.</p>
+										<a href="cartoon-hangover/bravest-warriors/2/7"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','segunda','oito')"><img class="banner bw" src="seasons/ch/bw/2/cards/8.png"></a>
+							<div id="modal-episodio" class="modal-thing bw segunda oito">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Merewif Tag</h2></strong>
+										<h5>S02E08</h5>
+										<p>Plum chama o Chris para sua casa para realizar um ritual de troca de corpos por motivos obscuros.</p>
+										<a href="cartoon-hangover/bravest-warriors/2/8"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','segunda','nove')"><img class="banner bw" src="seasons/ch/bw/2/cards/9.png"></a>
+							<div id="modal-episodio" class="modal-thing bw segunda nove">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Dimension Garden</h2></strong>
+										<h5>S02E09</h5>
+										<p>Episódio sobre os Bravest Warriors em sua infância.</p>
+										<a href="cartoon-hangover/bravest-warriors/2/9"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','segunda','dez')"><img class="banner bw" src="seasons/ch/bw/2/cards/10.png"></a>
+							<div id="modal-episodio" class="modal-thing bw segunda dez">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Parasox Pub</h2></strong>
+										<h5>S02E10</h5>
+										<p>Chris é levado para um bar atemporal onde todas as suas versões futuras coexistem.</p>
+										<a href="cartoon-hangover/bravest-warriors/2/10"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','segunda','onze')"><img class="banner bw" src="seasons/ch/bw/2/cards/11.png"></a>
+							<div id="modal-episodio" class="modal-thing bw segunda onze">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Season of The Worm</h2></strong>
+										<h5>S02E11</h5>
+										<p>Os Bravest Warriors (sem o Chris) procuram por Ralph Waldo Pickle Chips.</p>
+										<a href="cartoon-hangover/bravest-warriors/2/11"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','segunda','doze')"><img class="banner bw" src="seasons/ch/bw/2/cards/12.png"></a>
+							<div id="modal-episodio" class="modal-thing bw segunda doze">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Season of The Mitch</h2></strong>
+										<h5>S02E12</h5>
+										<p>Danny, Wallow e Beth tentam impedir Ralph Waldo Batatas de Pepino de invocar a Minhoca Aeon.</p>
+										<a href="cartoon-hangover/bravest-warriors/2/12"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="bw-curtas" class="aba-conteudo center" style="">
+						<div class="episodio seis"><a onclick="abrirModal('bw','curtas','um')"><img class="banner bw" src="seasons/ch/bw/curtas/cards/1.png"></a>
+							<div id="modal-episodio" class="modal-thing bw curtas um">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/1.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Moo-Phobia</h2></strong>
+										<h5>MINIE01</h5>
+										<p>Chris tem medo de Vacas.</p>
+										<a href="cartoon-hangover/bravest-warriors/curtas/1"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','curtas','dois')"><img class="banner bw" src="seasons/ch/bw/curtas/cards/2.png"></a>
+							<div id="modal-episodio" class="modal-thing bw curtas dois">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/2.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Drama Bug</h2></strong>
+										<h5>MINIE02</h5>
+										<p>Catbug faz uma novela.</p>
+										<a href="cartoon-hangover/bravest-warriors/curtas/2"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','curtas','tres')"><img class="banner bw" src="seasons/ch/bw/curtas/cards/3.png"></a>
+							<div id="modal-episodio" class="modal-thing bw curtas tres">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/3.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Browser Fail</h2></strong>
+										<h5>MINIE03</h5>
+										<p>Alguem raspa as sombrancelhas de Danny.</p>
+										<a href="cartoon-hangover/bravest-warriors/curtas/3"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','curtas','quatro')"><img class="banner bw" src="seasons/ch/bw/curtas/cards/4.png"></a>
+							<div id="modal-episodio" class="modal-thing bw curtas quatro">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>ImpossiBomb</h2></strong>
+										<h5>MINIE04</h5>
+										<p>Impossibear tem um presente.</p>
+										<a href="cartoon-hangover/bravest-warriors/curtas/4"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="episodio seis"><a onclick="abrirModal('bw','curtas','cinco')"><img class="banner bw" src="seasons/ch/bw/curtas/cards/5.png"></a>
+							<div id="modal-episodio" class="modal-thing bw curtas cinco">
+								<div class="modal-conteudo white-text">
+									<span class="close-span" onclick="fecharModal();"></span>
+									<span class="fechar-modal center white-text" onclick="fecharModal();">FECHAR</span>
+									<div class="sinopse" style="background: url('seasons/ch/bw/1/backgrounds/4.png') no-repeat center center;background-size: cover">
+										<h6>Bravest Warriors</h6>
+										<strong><h2>Terabeth Bytes</h2></strong>
+										<h5>MINIE05</h5>
+										<p>Beth usa sua técnica secreta.</p>
+										<a href="cartoon-hangover/bravest-warriors/curtas/5"><img class="watch-ep" src="img/watch.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="adult-swim" style="">
+					<div class="serie"><img class="banner rs pequeno" src="img/RnM-Banner.png"></div>
+					<div class="serie"><img class="banner rs pequeno" src="img/RnM-Banner.png"></div>
+					<div class="serie"><img class="banner rs pequeno" src="img/RnM-Banner.png"></div>
+					<div class="serie"><img class="banner rs pequeno" src="img/RnM-Banner.png"></div>
+					<div class="serie"><img class="banner rs pequeno" src="img/RnM-Banner.png"></div>
+					<div class="serie"><img class="banner rs pequeno" src="img/RnM-Banner.png"></div>
+					<div class="serie"><img class="banner rs pequeno" src="img/RnM-Banner.png"></div>
+					<div class="serie"><img class="banner rs pequeno" src="img/RnM-Banner.png"></div>
+					<div class="episodio"><img class="banner wbb" src="img/WBBS02E18.png"></div>
+					<div class="episodio"><img class="banner wbb" src="img/WBBS02E18.png"></div>
+					<div class="episodio"><img class="banner wbb" src="img/WBBS02E18.png"></div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+		<script type="text/javascript" src="js/materialize.js"></script>
+		<script type="text/javascript" src="js/javascript.js"></script>
+		<script id="dsq-count-scr" src="http://noitosfera.disqus.com/count.js" async=""></script>
+		
+<div class="hiddendiv common"></div>
+</body></html>
