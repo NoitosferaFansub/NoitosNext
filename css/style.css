@@ -57,11 +57,11 @@ header {
 .banner {
 	margin: 0.25%;
 	box-shadow: 0 0 10px rgba(0,0,0,.8);
-	transition: transform 250ms cubic-bezier(.39,.37,.01,1.38);
+	transition: transform 350ms cubic-bezier(.39,.37,.01,1.38);
 }
 
-.banner:hover {transform: scale(1.04);box-shadow: 0 0 10px rgba(255,255,255,.5);}
-.banner:active {transform: scale(1.01)}
+.banner:hover {transform: scale(1.06);}
+.banner:active {transform: scale(0.90)}
 
 .logo {
 	height: 2.7em;
@@ -236,23 +236,32 @@ ul.aba li a:focus, ul.aba li a.active {
 	z-index: 1000;
 	left: 0;
 	top: 0;
-	width: 100%;
+	width: 36%;
 	height: 100%;
-	background-color: rgba(0,0,0,0.4);
+	background-color: rgba(0,0,0,0.9);
+	box-shadow: 10px 0px 10px;
 }
+
+.modal-thing:before {
+}
+
+div#modal-episodio {}
 
 .modal-conteudo {
 	z-index: 1002;
 	background-color: #222222;
 	margin: 15% auto;
-	width: 85%;
-	max-height: calc(100vh - 4%);
+	max-width: 98%;
+	max-height: calc(100vh - 2%);
 	overflow-y: auto;
-	border-radius: 3px !important;
+	border-radius: 0;
+	max-height: 41%;
 }
 
 .watch-ep {
-	width: auto;
+	width: 50%;
+	position: relative;
+	right: 4%;
 }
 
 .fechar-modal {
@@ -267,7 +276,7 @@ ul.aba li a:focus, ul.aba li a.active {
 }
 
 .close-span:before {
-    content: 'Esc ou ✕';
+    content: 'Esc ou âœ•';
 	font-size: 18px;
 }
 .close-span {
@@ -281,15 +290,31 @@ ul.aba li a:focus, ul.aba li a.active {
 	position: relative;
 	z-index: 1005;
 	padding: 2.5% 2.5% 0 2.5%;
+	max-width: 902px;
+	max-height: 282px;
+	background-size: 350% !important;
+	text-align: left;
 }
 
 .modal-conteudo.white-text .sinopse h6, .modal-conteudo.white-text .sinopse h2, .modal-conteudo.white-text .sinopse h5, .modal-conteudo.white-text .sinopse p {
 	text-shadow: 0 0 7px #000;
-	margin: 0 !important;
+	margin: 1.3px !important;
+	text-align: left;
+	margin-left: 3px !important;
+}
+
+p {
+}
+
+.modal-conteudo.white-text .sinopse h5 {
+    body, html {margin: 0 !important;
+    overflow-x:hidden;
+    background: #505050;}
+    margin:;
 }
 
 .modal-conteudo.black-text .sinopse h6, .modal-conteudo.black-text .sinopse h2, .modal-conteudo.black-text .sinopse h5, .modal-conteudo.black-text .sinopse p {
-	text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+	text-shadow: 0px 1px 2px #fff;
 	margin: 0 !important;
 }
 
@@ -337,7 +362,8 @@ ul.aba li a:focus, ul.aba li a.active {
 	}
 	.close-span {display: none;}
 	.modal-conteudo {
-		width: 90%
+		max-width: 69%;
+		max-height: 64%;
 	}
 	.wide.episodios {
 		display: none;
@@ -348,27 +374,39 @@ ul.aba li a:focus, ul.aba li a.active {
 		max-height: 90vh;
 	}
 	.watch-ep {
-		width: 100%
+		width: 75%;
+		right: 4%;
 	}
 	.main-wrapper {
 		margin: 3% -3%;
 	}
-   @keyframes aaa {
-    0%{
-        background-position: left;
-   }
-    50%{
-        background-position: center;
-    }
-    100% {
-        background-position: right;
-    }
+    .modal-thing {
+	width: 102% !important;
+	max-height: 69%;
+	}
+	.sinopse {
+		max-width: 602px;
+		max-height: 227px;
+	}
+	p {
+    font-size: 12px;
+	}
   }
 #menu {
     width:100%;
-    background: url(/img/checkerboard-menu.png);
     box-shadow: 2px 0px 10px rgba(0,0,0,.3);
     height: 100%;
     background-size: 51px;
     animation: aaa 40s linear infinite;
+}
+@media screen and (max-width:340px) {
+	.sinopse {
+		max-width: 248px;
+		height: 215px;
+	}
+}
+@media screen and (max-width:425px) {
+	.sinopse {
+		height: 215px;
+	}
 }
