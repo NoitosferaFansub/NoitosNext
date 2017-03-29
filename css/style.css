@@ -239,7 +239,13 @@ ul.aba li a:focus, ul.aba li a.active {
 	width: 36%;
 	height: 100%;
 	background-color: rgba(0,0,0,0.9);
+	box-shadow: 10px 0px 10px;
 }
+
+.modal-thing:before {
+}
+
+div#modal-episodio {}
 
 .modal-conteudo {
 	z-index: 1002;
