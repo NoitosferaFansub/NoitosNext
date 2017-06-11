@@ -76,7 +76,7 @@ header {
 }
 .item {
 	width: 7em;
-	height: 3.4em;
+	height: 100%;
 	box-shadow: 2px 0px 10px rgba(0,0,0,.3);
 	transition: width 200ms cubic-bezier(.39,.37,.01,1.38);
 	text-align: center;
